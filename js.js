@@ -6,9 +6,9 @@
 
 
 var apart = [
-  ["강해민","김상현","백승호","김지혜"],
+  ["강해민","김상현","백승호","김지혜","신창원"],
   ["인호성","신세경","차범근","김영재","이지인"],
-  ["송중기","여상현","","김정은","박진범","김원재","송혜교"],
+  ["송중기","여상현","신창원","김정은","박진범","김원재","송혜교"],
   ["이재용","조이","김승빈","박유림","이동욱"],
   ["슬기","조성아","한지호"]
 ];
@@ -20,6 +20,7 @@ var apart = [
 
 var wanted = window.prompt("찾을 사람의 이름을 입력하세요.");
 var floor = apart.length;
+var finaladdress = [];
 for(i=0; i<5; i++) {
   var home = apart[i].length;
   for(j=0; j<home; j++) {
@@ -30,13 +31,20 @@ for(i=0; i<5; i++) {
       if(ho < 10){
         ho = "0"+ho;
       }
-      var address = cheong+ho;
-      alert(wanted+"은(는)"+address+"호에서 살고있습니다.");
-      break;
+      finaladdress.push(cheong+ho);
     }
   }
 }
 
+var final = "";
+for(i=0; i<finaladdress.length; i++) {
+  final = final + finaladdress[i]
+  if(i != finaladdress.length-1){
+    final = final + ", ";
+  }
+}
+
+alert(wanted+"은(는) 총 "+finaladdress.length+"명 발견되었으며 "+final+"에서 발견되었습니다.")
 
 //  var jumsu = [65,85,84,15,95,95];
 //  var jumsu = [
